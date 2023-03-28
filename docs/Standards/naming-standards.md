@@ -4,20 +4,18 @@ sidebar_position: 1
 
 # Naming Standards
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+## Folder Naming
 
-Docusaurus has **much more to offer**!
+- use lower case to all folder names.
+- Avoid abbreviations for folder names.
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+## File Naming
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+- Always use **Pascal Case** for file name with file type. for example if we are creating `animated slilder` component then the name should be `AnimatedSlider.component.tsx` ans the style file should be `AnimatedSlider.style.ts`.
+- Use full word in compound text instead of abbreviations.
+- Easily identify Higher order components with `hoc` prefix. eg: `ComponentName.hoc.tsx`
 
-## What's next?
+## Variables and functions Naming
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+- variables and function named should be written in **camelCase**. eg:`let some = 10`
+- global variables and constants should be written in **UPPERCASE**. eg: `const HEIGHT = 10`
