@@ -4,20 +4,32 @@ sidebar_position: 1
 
 # Styling
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+## JS Styling
 
-Docusaurus has **much more to offer**!
+```ts
+import { StyleSheet } from "react-native";
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+export const style = StyleSheet.create({
+  container: {
+    // style goes here..
+  },
+});
+```
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+## Tailwind
 
-## What's next?
+Most recommended way to style react native components is to use js styling. If you are familiar with tailwind and like to add this into the project, there are some packages avaiable for react native to implement tailwind.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+- [https://www.npmjs.com/package/react-native-tailwindcss](https://www.npmjs.com/package/react-native-tailwindcss)
+- [https://www.npmjs.com/package/tailwind-rn](https://www.npmjs.com/package/tailwind-rn)
+- [https://www.npmjs.com/package/react-native-tailwind](https://www.npmjs.com/package/react-native-tailwind)
+
+> Some of the tailwind classes may not work on the react native
+
+## UI Libraries
+
+There are many popular UI libraries are available for better and faster React native development.
+
+- [https://reactnativepaper.com/](https://reactnativepaper.com/)
+- [https://reactnativeelements.com/](https://reactnativeelements.com/)
+- [https://nativebase.io/](https://nativebase.io/)
