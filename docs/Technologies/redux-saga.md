@@ -4,20 +4,22 @@ sidebar_position: 3
 
 # Redux Saga
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+[Redux](https://redux-saga.js.org/) is used as a middleware to manage the whole app’s state in a centralised location called **store**. By using store all the components can reach the state, edit it and get the changes from other components.Sagas are implented by using [generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator) functions.
 
-Docusaurus has **much more to offer**!
+## Rules
+- Keep Sagas small and focused
+- Use [yield effects](https://redux-saga.js.org/docs/Glossary) to handle side effects
+- Use the appropriate [saga effect](https://redux-saga.js.org/docs/api/) for the task
+- Use error handling: Working with asynchronous code, it's important to handle errors properly. Redux Saga provides a variety of ways to handle errors, such as try/catch blocks
+- To dispatch an action, use the `put` effect.
+- To access redux store, use `select` effect. 
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+## Structure and Naming
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
-
-## What's next?
-
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+Inside `/redux` folder contains all the redux resources.
+  - The `root reducer` file combines all the reducers.
+  - The `root saga` file combines all the sagas into a single root saga.
+  - The `configureStore` file contains the logic to configure the Redux store and middlewares.
+  - For naming use **camel case**
+    - saga name: `sagaName.saga.ts`
+    - slice name: `sliceName.slice.ts`

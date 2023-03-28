@@ -28,8 +28,75 @@ React is often used for building single-page applications and is particularly we
 
 React components are the building blocks of a React application. Components are essentially reusable pieces of UI that can be composed together to create a larger, more complex UI.
 
+### Built-in components 
+
+- `<Fragment>`, alternatively written as `<>...</>`, lets you group multiple JSX nodes together.
+- `<Profiler>` lets you measure rendering performance of a React tree programmatically.
+- `<Suspense>` lets you display a fallback while the child components are loading.
+- `<StrictMode>` enables extra development-only checks that help you find bugs early.
+
 ```jsx
 function ComponentName(props) {
   return <h1>Hello, {props.name}!</h1>;
 }
+```
+
+## React Hooks
+
+ Hooks are JavaScript functions that allow developers to use state and other React features in functional components. Hooks are functions that enable developers to add stateful logic to their functional components, which were previously only available in class components.
+
+### Built-in hooks
+#### useState
+ useState allows functional components to manage state. It takes an initial value and returns an array with two elements - the current state value and a function to update the state value.
+
+ ```jsx
+ const [count, setCount] = useState(0);
+```
+#### useReducer
+useReducer allows functional components to manage state through a reducer function. It takes a reducer function and an initial state value, and returns an array with two elements - the current state value and a dispatch function.
+
+```jsx
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+#### useContext
+Context lets a component receive information from distant parents without passing it as props.useContext allows functional components to consume a context that has been created by a React.createContext call. It takes the context object as its argument and returns its current value.
+
+```jsx 
+const value = useContext(SomeContext)
+```
+
+#### useRef 
+useRef is a hook that allows to directly create a reference to the DOM element in the functional component. 
+useRef returns a mutable ref object whose `.current` property is initialized to the passed argument. The ref object can be used to store any mutable value, updating a ref does not re-render your component.
+
+```jsx
+const ref = useRef(initialValue);
+```
+
+#### useEffect 
+The useEffect hook is a smooth combination of React’s lifecycle methods like componentDidMount, componentDidUpdate and componentWillUnmount. 
+
+- `callback` is a function that contains the side-effect logic. callback is executed right after the DOM update.
+- `dependencies` is an optional array of dependencies. useEffect() executes callback only if the dependencies have changed between renderings.
+
+```jsx
+useEffect(callback,[dependencies]);
+```
+
+#### useMemo
+useMemo hook returns a memoized value that helps in performance optimizations.It is a memoization technique that is used to avoid recomputing expensive values on every render cycle.
+
+It takes two arguments: a function that returns the memoized value, and an array of dependencies that the function depends on. The function is only called when one of the dependencies changes, otherwise, it returns the cached value.
+
+```jsx
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+#### useCallback
+useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
+
+```jsx
+const memoizedCallback = useCallback(() => {
+    doSomething(a, b);
+  },[a, b]);
 ```

@@ -6,20 +6,42 @@ sidebar_position: 2
 
 [Official Documentation](https://reactnative.dev/)
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+React Native is a JavaScript framework that is used to develop mobile applications for iOS and Android.
 
-Docusaurus has **much more to offer**!
+## How React Native Works
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+A React Native app is made up of two sides, the JavaScript side and the native side. The native side could be Objective-C/Swift for iOS or Java/Kotlin for Android. The React Native Bridge allows the native code and the javascript code to talk to each other. Without the bridge, there is no way for the native code to send any information to the JavaScript code and vise versa.
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
 
-## What's next?
+There are two ways to build React Native apps such as **React Native CLI** and **Expo CLI**.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+**Expo** is a framework that is used to build React Native apps. It is basically a bundle with tools and services built for React Native, that will help you get started with building React Native apps with ease.
+
+## Why React Native CLI over Expo?
+
+Why we prefer [React Native CLI](https://reactnative.dev/docs/environment-setup) beacuse its a built-in feature that helps you take control over the management of the project locally including the ability to choose our own dependencies, build tools, and configuration.
+
+It provides the ability to create native modules, which allows to write code in native languages like Java or Objective-C, and then expose that code to the JavaScript layer.
+
+We can use any third-party library or component, and can customize the app to our specific needs. Also we can integrate with other development tools such as version control systems like Git, continuous integration and delivery (CI/CD) systems, and various testing frameworks.You can not control the size of the app because the expo includes a pre-included library in SDK. (minimum prod build starts from 29MB-38MB).
+
+## Debugging
+
+**[Flipper](https://fbflipper.com/)** is Android & iOS Mobile debugging tools without using debug mode in react native.
+Flipper has different plugins for debugging include `Layout`, `Network`, `Shared preferences`.
+
+The greatest benefit of Flipper is not also many plugins but you can see Android / iOS device console debugging easily too.
+
+The Flipper alert you about crash or network rejection too.
+
+
+
+
+
+
+
+
+
+
+
+
