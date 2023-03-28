@@ -4,20 +4,43 @@ sidebar_position: 1
 
 # Env
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+For use enviornment variables in react native project, the most recommended way is to use a package named `react-native-dotenv`. This babel plugin lets you inject your environment variables into your Javascript environment using dotenv for multiple environments.
 
-Docusaurus has **much more to offer**!
+[Official Documentation](https://www.npmjs.com/package/react-native-dotenv)
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+## Installation
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+```bash
+npm install react-native-dotenv
+```
 
-## What's next?
+include the package into `.babelrc` file. If the file does not exist, just create it.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+```json
+{
+  "plugins": [["module:react-native-dotenv"]]
+}
+```
+
+Create a new .env file in the root of your project project directory
+
+```
+API_URL=https://api.example.org
+API_TOKEN=abc123
+```
+
+After all this restart your project and check all working fine.
+
+## Usage
+
+You can use the environment variables in the files like this:
+
+```js
+import { API_URL, API_TOKEN } from "@env";
+
+fetch(`${API_URL}/users`, {
+  headers: {
+    Authorization: `Bearer ${API_TOKEN}`,
+  },
+});
+```

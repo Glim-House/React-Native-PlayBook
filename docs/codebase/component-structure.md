@@ -4,20 +4,42 @@ sidebar_position: 4
 
 # Component Structure
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+## Sample component
 
-Docusaurus has **much more to offer**!
+```ts
+import { View, Text } from "react-native";
+import React from "react";
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+interface Props {
+  /**
+   * Description of the prop
+   */
+  name: string;
+}
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+/**
+ * @name Dummy Component
+ * @description lorem ipsum dolor sit amet, consectetur adipiscing
+ * @author Authorname
+ * @returns
+ */
+const DummyComponent = ({ name }: Props) => {
+  try {
+    return (
+      <View>
+        <Text>{name}</Text>
+      </View>
+    );
+  } catch (error) {
+    // Actions that done when error is thrown
+  }
+};
 
-## What's next?
+export default DummyComponent;
+```
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+## A Component must have
+
+- proper comments
+- component level exception handling
+- proper import statements

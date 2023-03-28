@@ -4,20 +4,36 @@ sidebar_position: 1
 
 # Semantic Versioning
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Versioning is the process of assigning unique version name to unique states of an application or software. Every application must follow a versioning strategy to ensure the smooth wokring of process.
+There are many type of versioning strategies are available:
 
-Docusaurus has **much more to offer**!
+- Semantic Versioning
+- Calendar Versioning
+- Sprint-based Versioning
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+In react native applications, we highly recommend to use the semantic versioning strategy that includes `<major>.<minor>.<patch>[.<build number>]` numbers for ease of accessibility.
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+| Stage         | Example Version |
+| ------------- | --------------- |
+| Fisrt Release | 1.0.0           |
+| Patch Release | 1.0.1           |
+| Minor Release | 1.1.0           |
+| Major Release | 2.0.0           |
 
-## What's next?
+There is a semver supported package avaiable in npm registry to maintain versioning.
+[https://www.npmjs.com/package/semantic-release](https://www.npmjs.com/package/semantic-release)
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+## Setup
+
+run the below command in root directory
+
+```bash
+npx semantic-release-cli setup
+```
+
+It will ask some questions and complete the setup process based on the answers.
+Its better to write a CI for semantic versioning using this package instead of manual versioning.
+
+## References docs
+
+- [https://semver.org/](https://semver.org/)
