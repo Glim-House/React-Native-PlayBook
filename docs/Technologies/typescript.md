@@ -1,16 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 ---
 
-# Folder Structure
+# Typescript
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+TypeScript is a programming language developed by Microsoft. It is a superset of JavaScript that adds optional static typing, class-based object-oriented programming, and other features to the language. TypeScript was first released in 2012 and has since gained popularity as a powerful and flexible language for building large-scale web applications.
 
-Docusaurus has **much more to offer**!
-
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
-
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+One of the main benefits of TypeScript is its support for static type checking. With TypeScript, developers can define types for variables, function parameters, and return values, which can help catch errors at compile time, before the code is executed. This can make it easier to maintain large and complex codebases, particularly as the codebase grows over time.
 
 ## What's next?
 
