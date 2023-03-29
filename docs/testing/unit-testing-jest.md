@@ -2,22 +2,44 @@
 sidebar_position: 2
 ---
 
-# Unit Test - Jest
+# Unit Testing
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+A unit test is a piece of code that tests the behavior of a function or class, usually written by developers.
 
-Docusaurus has **much more to offer**!
+## Testing frameworks
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+- Jest [https://jestjs.io/](https://jestjs.io/)
+- Mocha [https://mochajs.org/](https://mochajs.org/)
+- Selenium [https://www.selenium.dev/](https://www.selenium.dev/)
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+Most recommented testing framework for react native application is to use **Jest** framework.
 
-## What's next?
+## Snapshot testing
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+Snapshot test is the most commonly accepted testing method for react native component to ensure the code block functionality. Once we initiate the test, it will create a snapshot of the component in the respective folder and it will compare the component with snpashot on every changes.
+
+First we need to create a test file
+
+```js title="__tests__/Intro-test.js"
+import React from "react";
+import renderer from "react-test-renderer";
+import Intro from "../Intro";
+
+test("renders correctly", () => {
+  const tree = renderer.create(<Intro />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+```
+
+When you run `yarn test` or `jest`, this will produce an output file.
+
+> The snapshot should be commited to git along with component
+
+## standards
+
+- always keep test files inside the component folder
+- test file name should be prefixed with **test**. eg: `component.test.js`
+
+## References
+
+- [https://jestjs.io/docs/tutorial-react-native](https://jestjs.io/docs/tutorial-react-native)
