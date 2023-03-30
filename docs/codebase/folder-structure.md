@@ -4,20 +4,42 @@ sidebar_position: 1
 
 # Folder Structure
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
-
-Docusaurus has **much more to offer**!
-
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
-
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
-
-## What's next?
-
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+```bash
+.
+├── /android/                   # android-specific code (bootstrapped from `react-native init`)
+├── /ios/                       # ios-specific code (bootstrapped from `react-native init`)
+├── /node_modules/              # 3rd-party libraries and utilities
+├── /jest/                      # Configurations for unit testing
+├── /src                        # Javascript or typescript code
+|   /assets                     # **Optional** if you'd like to keep them outside of your components
+│       ├── /fonts/
+│       ├── /images/
+│       └── /videos/
+|   /HOC                        # Commonly used higher order components
+|   /config                     # App configurations
+|   /Constants                  # App constants
+|   /Enums                      # Enums for routes, slices etc
+|   /Components                 # Basic components for the entire application, each component have respective folders and it includes the files below
+│       ├── Foo.component.tsx   # Component file
+│       ├── Foo.test.js         # Unit testing
+│       └── Foo.style.ts        # style file
+|   /Hooks                      # Commonly used hooks
+|   /Interface                  # Interfaces for routes, slices, components etc
+|   /Screen                     # App screens, each screen have respective folders and it includes the files below
+│       ├── Foo.screen.tsx      # Screen file
+│       ├── Foo.style.tsx       # Style file
+│       └── /Partials/          # Components for the screen
+|   /Redux                      # Redux Store
+|   /Routes                     # **Optional** if you'd like to keep them outside of your components
+│       ├── Navigation Hook
+│       ├── Pages
+│       ├── RootNavigation
+│       └── Tab Navigation
+|   /Services                   # This folder contains services that related to api calls and backend
+│       ├── API                 # All the API calls from the app
+│       └── Requests            # Axios configurations
+|   /Styles                     # **Optional** Global Styles
+|   /Utils                      # **Optional** Utility functions
+|   /Webview                    # **Optional** Contains html files and configurations for webview
+└── package.json                # The list of 3rd party libraries and utilities
+```

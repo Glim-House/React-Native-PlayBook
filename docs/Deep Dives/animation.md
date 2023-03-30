@@ -4,20 +4,63 @@ sidebar_position: 1
 
 # Animations
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Animation is the process of adding a motion effect to a view, image, or a text to increate user experience. In react native, there are many animation libraries are available like:
 
-Docusaurus has **much more to offer**!
+- Re-Animated [https://docs.swmansion.com/react-native-reanimated/](https://docs.swmansion.com/react-native-reanimated/)
+- Moti [https://moti.fyi/](https://moti.fyi/)
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+We highly recommend to use React Native reanimated to enterprise projects. Because, it have higher performance and better communiy support.
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+## Use of shared values
 
-## What's next?
+Simply says shared values are the animation controlling variables inside a component. for every animation declare a new shared value:
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+```js
+const sharedVal = useSharedValue(3.1415);
+```
+
+There is a hook available named `useDerivedValue` to creating shared value reference that can change in response to updating of one or more other shared values.
+
+```js
+const App = () => {
+  const [state, setState] = useState(0);
+  const sv = useSharedValue(state);
+
+  const derived = useDerivedValue(() => {
+    return sv.value * state;
+  }, dependencies);
+  //...
+  return <></>;
+};
+```
+
+> Don't use shared values to conditional rendering or other logical functions. It may lead to app crashes.
+
+## Use of worklets
+
+Basically worklets are the small js blocks that works along with animations.
+
+```js
+function someWorklet(greeting) {
+  "worklet";
+  console.log(greeting, "From the UI thread");
+}
+
+function onPress() {
+  runOnUI(someWorklet)("Howdy");
+}
+```
+
+use of **worklets**, **runOnUi**, **runOnJs**, etc will help the animation to work smoothly without any framedrops.
+
+## Shared Element Transition
+
+Currently shared element transitions by reanimated is under experiaments. [https://docs.swmansion.com/react-native-reanimated/docs/api/sharedElementTransitions](https://docs.swmansion.com/react-native-reanimated/docs/api/sharedElementTransitions)
+
+So, meantime we can use `react-native-shared-element` [https://github.com/IjzerenHein/react-native-shared-element](https://github.com/IjzerenHein/react-native-shared-element)
+
+## Some References
+
+- [https://docs.swmansion.com/react-native-reanimated/docs/api/LayoutAnimations/customAnimations](https://docs.swmansion.com/react-native-reanimated/docs/api/LayoutAnimations/customAnimations)
+- [https://docs.swmansion.com/react-native-reanimated/docs/api/miscellaneous/interpolate](https://docs.swmansion.com/react-native-reanimated/docs/api/miscellaneous/interpolate)
+- [https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/layout_animations](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/layout_animations)
