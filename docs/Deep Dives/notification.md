@@ -1,23 +1,43 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # Notifications
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+To implement push notifications in React Native using Firebase, follow these steps:
 
-Docusaurus has **much more to offer**!
+1. Create a Firebase project:
+    - Go to the Firebase console and create a new project.
+    - Follow the steps to create a new project and give it a name.
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+2. Set up Firebase Cloud Messaging (FCM):
+    - Go to the Firebase console and select your project.
+    - Click on the gear icon and select "Project settings".
+    - Go to the "Cloud Messaging" tab.
+    - Follow the instructions to configure your FCM project and get the server key.
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+3. Install the Firebase SDK:
+    - In your React Native project, install the Firebase SDK by running the following command
+     ```bash
+      npm install --save @react-native-firebase/app @react-native-firebase/messaging
+     ```
 
-## What's next?
+4. Add the Firebase configuration file:
+    - Go to the Firebase console and select your project.
+    - Click on the gear icon and select "Project settings".
+    - Go to the "General" tab.
+    - Scroll down to "Your apps" and click on the "Add app" button.
+    - Select the "Web" icon.
+    - Give your app a nickname and click on the "Register app" button.
+    - Copy the Firebase configuration code and paste it into your React Native project.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+5. Configure the Firebase SDK
+6. Add APN key (iOS only):
+    - Go to the Apple Developer portal and create a new APN key.
+    - Download the key file and keep it safe.
+    - Go to the Firebase console and select your project.
+    - Go to the "Cloud Messaging" tab.
+    - Click on the "iOS app configuration" button.
+    - Upload the APN key file.
+    - Enter the APN key ID and team ID.
+    - Click on the "Save" button.
