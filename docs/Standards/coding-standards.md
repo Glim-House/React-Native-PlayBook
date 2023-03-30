@@ -4,20 +4,23 @@ sidebar_position: 2
 
 # Coding Standards
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Writing code may easy, but well-structured one is powerful! The code should also be *Reliable, Scalable, and Maintainable*. 
 
-Docusaurus has **much more to offer**!
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
-
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
-
-## What's next?
-
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+- Your app should contain a proper `README.md` file that explains your app. Clearly mention the features, functionalities, contributions guidelines, installation process, guide, etc.
+- Organize Imports: Sorting imports is a good practice, divide each imports such as: 
+    - React Imports
+    - Library Imports
+    - Absolute imports from the project
+    - Relative Imports
+- Follow [Folder Structure](../codebase/folder-structure.md) and [Naming Conventions](./naming-standards.md)
+- Keep the component and screen clean, have a look at [component structure](../codebase/component-structure.md)
+- Keep the app responsive and avoid Inline Styling
+  - use `<SafeAreaView>` component is used to ensure that the content of your app is displayed correctly and not overlapped by the device's status bar or rounded corners.
+  - Inline styling is more difficult to maintain if there is any change in style, you have top change 100 lines of code. Instead of inline style you have to define styles with unique class names in stylesheet.
+- Document everything 
+  - Write comments that are legal, informative, explanatory of intent, and offer clarification.
+- Remove logs
+- Always Handle Errors
+  - It’s important to handle errors that occur in your application, whether they are caused by problems with your code or by external factors like network issues or API errors.We use try catch blocks to handle exceptions inside the app.
+ - Use a linter to make your code easier to review.
