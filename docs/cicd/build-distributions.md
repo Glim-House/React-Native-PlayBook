@@ -4,20 +4,23 @@ sidebar_position: 1
 
 # Build Distributions
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+IN the development phase, we have to distribute the development build to the testers periodically for testing purposes. So, we use **Diawi** fro the same.
+Diawi is a tool for developers to deploy development apps directly to the devices. It will work on ios and android devices.
 
-Docusaurus has **much more to offer**!
+## Android
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+In android you can take the development build with the following command:
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+```bash
+cd android && ./gradlew assembleRelease
+```
 
-## What's next?
+It will create an .apk build in `android/app/build/outputs/apk/release/app-release.apk`. You can directly upload the build into diawi.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+## iOS
+
+For ios, first we have to archive the build, and select **adhoc** in the upload method. It will build and .ipa file in respective directory. You can directly upload the ipa build into diawi.
+
+## References
+
+- [https://www.diawi.com/](https://www.diawi.com/)

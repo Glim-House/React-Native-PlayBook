@@ -4,20 +4,50 @@ sidebar_position: 4
 
 # Navigations
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+## Types of Navigation
 
-Docusaurus has **much more to offer**!
+- Stack Navigation
+- Tab Navigation
+- Drawer Navigation
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+## Nested Navigation
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+Nesting navigation means rendering a navigator inside of screen of another navigator. for example: Tab Navigation inside the screen of a Stack navigation
 
-## What's next?
+```js
+function Home() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Feed" component={Feed} />
+      <Tab.Screen name="Messages" component={Messages} />
+    </Tab.Navigator>
+  );
+}
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Settings" component={Settings} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+```
+
+> Note: In a typical React Native app, the NavigationContainer should be only used once in your app at the root. You shouldn't nest multiple NavigationContainers unless you have a specific use case for them.
+
+## Best Practices
+
+- Always create seperate files for navigation. Don't include naviagtion inside the `App.tsx`.
+- Use **Enum** for route names. Don't hard code.
+
+## References
+
+- [https://reactnavigation.org/](https://reactnavigation.org/)
