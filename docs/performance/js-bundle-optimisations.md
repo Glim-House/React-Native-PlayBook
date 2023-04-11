@@ -2,7 +2,10 @@
 sidebar_position: 1
 ---
 
-# JS Bundle
+# JS Bundle Optimisations
+
+Both in development and in production, React Native builds the JavaScript code that executes on the devices using Metro. as well as the Metro architecture's emphasis on development speed.
+There are some issue came into the scene related to the bundling in production.
 
 ## Enable Hermes
 
