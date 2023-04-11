@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Animation Optimisations
 
-From a developer perspective react native animations needs a lots of optimisation. Otherwise it leads to app crashes and poor user experiance. There are some common performance issues faced by animations:
+From a developer perspective react native animations needs a lots of optimisation. Otherwise it leads to app crashes and poor user experience. There are some common performance issues faced by animations:
 
 - Overloading the main thread
 - Frame drop in devices with more than 60 FPS
